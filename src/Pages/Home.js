@@ -36,8 +36,8 @@ function Home() {
                 )) : error ? <Text>{error}</Text> : blogs.map((blog) => (
                     <Link to={`/${blog.id}`} key={blog.id}>
                         <Box p={5} shadow='md' borderWidth='1px'>
-                            <Text fontSize='xl'>{blog.title}</Text>
-                            <Text fontSize='sm' mt={4}>{blog.body}</Text>
+                            <Text fontSize='xl'>{blog.title.slice(0, 30)}...</Text>
+                            <Text fontSize='sm' mt={4}>{blog.body.slice(0, 100)}...</Text>
                         </Box>
                     </Link>
                 ))}
