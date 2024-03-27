@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { getBlog } from '../Redux/posts/actions'
-import { useNavigate, useParams } from 'react-router-dom'
-import { Box, Text } from '@chakra-ui/react'
+import {  useParams } from 'react-router-dom'
+import { Box, Skeleton, Stack, Text } from '@chakra-ui/react'
 import { useDispatch, useSelector } from 'react-redux'
 
 function Blog() {
@@ -14,7 +14,10 @@ function Blog() {
     }, [dispatch])
     return (
         <Box>
-            {loading ? <Text>Loading...</Text> : error ? <Text>{error}</Text> : (
+            {loading ? <Stack>
+                        <Skeleton height='20px' />
+                        <Skeleton height='150px' />
+                    </Stack> : error ? <Text>{error}</Text> : (
                 <Box p={5} shadow='md' borderWidth='1px'>
                     <Text fontSize='xl'>{blog.title}</Text>
                     <Text fontSize='sm' mt={4}>{blog.body}</Text>
