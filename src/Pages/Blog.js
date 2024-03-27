@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from 'react-redux'
 function Blog() {
     const dispatch = useDispatch()
     const { data: blog, loading, error } = useSelector((state) => state.blog.blog)
-    const navigate = useNavigate()
     const { id } = useParams()
 
     useEffect(() => {
