@@ -22,7 +22,7 @@ function Home() {
                 isClosable: true,
             })
         }
-    }, [dispatch, pagination])
+    }, [dispatch, pagination, toast])
 
 
     return (

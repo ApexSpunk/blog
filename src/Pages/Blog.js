@@ -11,7 +11,7 @@ function Blog() {
 
     useEffect(() => {
         dispatch(getBlog(id))
-    }, [dispatch])
+    }, [dispatch, id])
     return (
         <Box>
             {loading ? <Stack>
